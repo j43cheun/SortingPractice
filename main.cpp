@@ -8,6 +8,8 @@
 #include "common.h"
 #include "radix.h"
 #include "merge.h"
+#include "heap.h"
+#include "quick.h"
 
 
 int
@@ -27,6 +29,24 @@ main (
 
     {
         MergeSort sort;
+
+        auto output = input;
+        sort.sort(output);
+
+        sort.validate(input, output);
+    }
+
+    {
+        HeapSort sort;
+
+        auto output = input;
+        sort.sort(output);
+
+        sort.validate(input, output);
+    }
+
+    {
+        QuickSort sort;
 
         auto output = input;
         sort.sort(output);
